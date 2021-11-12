@@ -1,0 +1,387 @@
+// -------------------------------------------------- //
+//  General settings for analysis
+//  Most of them can be changed by using command
+//  line arguments.
+// -------------------------------------------------- //
+H1AnalysisSteer("EventShapes") {
+   fNEvents          =  -1;                      // -n <..> Number of events to be analysed, -1 for all
+   fInterval         =  1000;                    // Frequency at which to display progress
+   fOutputFile       =  "evtshp_ep0304.root";    // -o <...>
+   fChains           =  "Django_Eplus0304_1";              // -c <...> chain to be analyzed
+
+   // Analysis chains to analyse
+   ///fChains   = "Data_Eplus0304_1, DataEplus0304_2, Django_Eplus0304_1, Django_Eplus0304_2, Django_Eplus0304_3, Django_Eplus0304_4, Django_Eplus0304_5, Django_Eplus0304_6, Django_Eplus0304_7, Rapgap_Eplus0304_1, Rapgap_Eplus0304_2, Rapgap_Eplus0304_3, Rapgap_Eplus0304_4, Rapgap_Eplus0304_5, Rapgap_Eplus0304_6, 
+   // fChains Todo = DVCS_1, DVCS_2, Compton_1, Compton_2, Compton_3, Compton_4, Compton_5, Compton_6, Compton_7, Compton_8, Compton_9, Compton_10, Grape, DjBkgd_1, DjBkgd_2, DjBkgd_3, DjBkgd_4, DjBkgd_5, DjBkgd_6, DjBkgd_7, DjBkgd_8, DjBkgd_9, DjBkgd_10, DjBkgd_11, DjBkgd_12, DjBkgd_13, DjBkgd_14, DjBkgd_15, DjBkgd_16, DjBkgd_17, Pythia_1, Pythia_2, Pythia_3, Pythia_4, Pythia_5, Pythia_6, Pythia_7, Pythia_8, Pythia_9, Pythia_10, Pythia_11, Pythia_12, Pythia_13, Pythia_14, Pythia_15, Pythia_16, Pythia_17, Pythia_18, Pythia_19, Pythia_20, Pythia_21, Pythia_22, Pythia_23, Pythia_24, Pythia_25, Pythia_26, CCBkgd"; 
+
+   // use systematics
+   fUsingSystematics = 0;
+
+   // Run selection and lumi calculation
+   fGoodRunFile      = "../LumiFiles/nc_goodruns_06.root";  // Good run file
+   fRunSelection     = "444094,466997"; // e-06 running
+
+   // other parameters
+   fKineRecMethod    =  H1Constants::eKineRecESigma;  // basic reconstruction method
+}
+
+
+// -------------------------------------------------- //
+//  Settings for the different chains
+// -------------------------------------------------- //
+
+H1AnalysisChainSteer("DjNorad") {
+   fApplyRunSelection = false;
+   fChainType        = H1AnalysisChainSteer::eModel;
+}
+
+H1AnalysisChainSteer("RaNorad") {
+   fApplyRunSelection = false;
+   fChainType         = H1AnalysisChainSteer::eModel;
+}
+
+
+
+// -------------------------------------------------- //
+//  Settings for H1SteerTree
+//     fLoadHat, fLoadMod, fLoadODS, fLoadUserTree
+//     are hard-coded in analysis-code.
+// -------------------------------------------------- //
+
+//*************************************************//
+//            RAPGAP NORAD  ep_0304                //
+//*************************************************//
+H1SteerTree("RaNorad_Eplus0304_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.A.C0000000-0000009";
+   fLumi = 1747.68;
+}
+H1SteerTree("RaNorad_Eplus0304_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.A.C0000010-0000019";
+   fLumi = 1747.68;
+}
+H1SteerTree("RaNorad_Eplus0304_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.A.C0000020-0000029";
+   fLumi = 1747.68;
+}
+H1SteerTree("RaNorad_Eplus0304_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.A.C0000030-0000032";
+   fLumi = 1747.68;
+}
+H1SteerTree("RaNorad_Eplus0304_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.B.C0000000-0000009";
+   fLumi = 1749.26;
+}
+H1SteerTree("RaNorad_Eplus0304_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.B.C0000010-0000019";
+   fLumi = 1749.26;
+}
+H1SteerTree("RaNorad_Eplus0304_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.B.C0000020-0000029";
+   fLumi = 1749.26;
+}
+H1SteerTree("RaNorad_Eplus0304_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.B.C0000030-0000032";
+   fLumi = 1749.26;
+}
+H1SteerTree("RaNorad_Eplus0304_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.C.C0000000-0000009";
+   fLumi = 1748.03;
+}
+H1SteerTree("RaNorad_Eplus0304_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.C.C0000010-0000019";
+   fLumi = 1748.03;
+}
+H1SteerTree("RaNorad_Eplus0304_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.C.C0000020-0000029";
+   fLumi = 1748.03;
+}
+H1SteerTree("RaNorad_Eplus0304_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.C.C0000030-0000032";
+   fLumi = 1748.03;
+}
+H1SteerTree("RaNorad_Eplus0304_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.D.C0000000-0000009";
+   fLumi = 1749.46;
+}
+H1SteerTree("RaNorad_Eplus0304_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.D.C0000010-0000019";
+   fLumi = 1749.46;
+}
+H1SteerTree("RaNorad_Eplus0304_15"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.D.C0000020-0000029";
+   fLumi = 1749.46;
+}
+H1SteerTree("RaNorad_Eplus0304_16"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.D.C0000030-0000032";
+   fLumi = 1749.46;
+}
+
+
+//*************************************************//
+//            RAPGAP NORAD  ep_0607                //
+//*************************************************//
+
+H1SteerTree("RaNorad_Eplus0607_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.E.C0000000-0000009";
+   fLumi = 1747.97;
+}
+H1SteerTree("RaNorad_Eplus0607_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.E.C0000010-0000019";
+   fLumi = 1747.97;
+}
+H1SteerTree("RaNorad_Eplus0607_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.E.C0000020-0000029";
+   fLumi = 1747.97;
+}
+H1SteerTree("RaNorad_Eplus0607_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.E.C0000030-0000032";
+   fLumi = 1747.97;
+}
+H1SteerTree("RaNorad_Eplus0607_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.F.C0000000-0000009";
+   fLumi = 1748.45;
+}
+H1SteerTree("RaNorad_Eplus0607_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.F.C0000010-0000019";
+   fLumi = 1748.45;
+}
+H1SteerTree("RaNorad_Eplus0607_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.F.C0000020-0000029";
+   fLumi = 1748.45;
+}
+H1SteerTree("RaNorad_Eplus0607_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.F.C0000030-0000032";
+   fLumi = 1748.45;
+}
+H1SteerTree("RaNorad_Eplus0607_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.G.C0000000-0000009";
+   fLumi = 1748.95;
+}
+H1SteerTree("RaNorad_Eplus0607_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.G.C0000010-0000019";
+   fLumi = 1748.95;
+}
+H1SteerTree("RaNorad_Eplus0607_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.G.C0000020-0000029";
+   fLumi = 1748.95;
+}
+H1SteerTree("RaNorad_Eplus0607_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.G.C0000030-0000032";
+   fLumi = 1748.95;
+}
+H1SteerTree("RaNorad_Eplus0607_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.H.C0000000-0000009";
+   fLumi = 1747.21;
+}
+H1SteerTree("RaNorad_Eplus0607_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.H.C0000010-0000019";
+   fLumi = 1747.21;
+}
+H1SteerTree("RaNorad_Eplus0607_15"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.H.C0000020-0000029";
+   fLumi = 1747.21;
+}
+H1SteerTree("RaNorad_Eplus0607_16"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EPLUSP.NORAD.Q2GT100.CTEQ6L.H.C0000030-0000032";
+   fLumi = 1747.21;
+}
+
+//*************************************************//
+//            RAPGAP NORAD  em_0405                //
+//*************************************************//
+
+H1SteerTree("RaNorad_Eminus0405_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.E.C0000000-0000009";
+   fLumi = 1730.51;
+}
+H1SteerTree("RaNorad_Eminus0405_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.E.C0000010-0000019";
+   fLumi = 1730.51;
+}
+H1SteerTree("RaNorad_Eminus0405_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.E.C0000020-0000029";
+   fLumi = 1730.51;
+}
+H1SteerTree("RaNorad_Eminus0405_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.E.C0000030-0000032";
+   fLumi = 1730.51;
+}
+H1SteerTree("RaNorad_Eminus0405_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.F.C0000000-0000009";
+   fLumi = 1730.30;
+}
+H1SteerTree("RaNorad_Eminus0405_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.F.C0000010-0000019";
+   fLumi = 1730.30;
+}
+H1SteerTree("RaNorad_Eminus0405_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.F.C0000020-0000029";
+   fLumi = 1730.30;
+}
+H1SteerTree("RaNorad_Eminus0405_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.F.C0000030-0000032";
+   fLumi = 1730.30;
+}
+H1SteerTree("RaNorad_Eminus0405_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.G.C0000000-0000009";
+   fLumi = 1729.70;
+}
+H1SteerTree("RaNorad_Eminus0405_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.G.C0000010-0000019";
+   fLumi = 1729.70;
+}
+H1SteerTree("RaNorad_Eminus0405_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.G.C0000020-0000029";
+   fLumi = 1729.70;
+}
+H1SteerTree("RaNorad_Eminus0405_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.G.C0000030-0000032";
+   fLumi = 1729.70;
+}
+H1SteerTree("RaNorad_Eminus0405_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.H.C0000000-0000009";
+   fLumi = 1729.31;
+}
+H1SteerTree("RaNorad_Eminus0405_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.H.C0000010-0000019";
+   fLumi = 1729.31;
+}
+H1SteerTree("RaNorad_Eminus0405_15"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.H.C0000020-0000029";
+   fLumi = 1729.31;
+}
+H1SteerTree("RaNorad_Eminus0405_16"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.H.C0000030-0000032";
+   fLumi = 1729.31;
+}
+//*************************************************//
+//            RAPGAP NORAD  em_06                  //
+//*************************************************//
+
+H1SteerTree("RaNorad_Eminus06_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000000-0000009";
+   fLumi = 1728.95;
+}
+H1SteerTree("RaNorad_Eminus06_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000010-0000019";
+   fLumi = 1728.95;
+}
+H1SteerTree("RaNorad_Eminus06_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000020-0000029";
+   fLumi = 1728.95;
+}
+H1SteerTree("RaNorad_Eminus06_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000030-0000032";
+   fLumi = 1728.95;
+}
+H1SteerTree("RaNorad_Eminus06_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000000-0000009";
+   fLumi = 1728.78;
+}
+H1SteerTree("RaNorad_Eminus06_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000010-0000019";
+   fLumi = 1728.78;
+}
+H1SteerTree("RaNorad_Eminus06_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000020-0000029";
+   fLumi = 1728.78;
+}
+H1SteerTree("RaNorad_Eminus06_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000030-0000032";
+   fLumi = 1728.78;
+}
+H1SteerTree("RaNorad_Eminus06_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000000-0000009";
+   fLumi = 1730.34;
+}
+H1SteerTree("RaNorad_Eminus06_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000010-0000019";
+   fLumi = 1730.34;
+}
+H1SteerTree("RaNorad_Eminus06_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000020-0000029";
+   fLumi = 1730.34;
+}
+H1SteerTree("RaNorad_Eminus06_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000030-0000032";
+   fLumi = 1730.34;
+}
+H1SteerTree("RaNorad_Eminus06_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000000-0000009";
+   fLumi = 1728.84;
+}
+H1SteerTree("RaNorad_Eminus06_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000010-0000019";
+   fLumi = 1728.84;
+}
+H1SteerTree("RaNorad_Eminus06_15"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000020-0000029";
+   fLumi = 1728.84;
+}
+H1SteerTree("RaNorad_Eminus06_16"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_rapgap";
+   fFileNames = "RAPGAP31.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000030-0000032";
+   fLumi = 1728.84;
+}
