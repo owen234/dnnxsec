@@ -1,0 +1,207 @@
+// -------------------------------------------------- //
+//  General settings for analysis
+//  Most of them can be changed by using command
+//  line arguments.
+// -------------------------------------------------- //
+H1AnalysisSteer("EventShapes") {
+   fNEvents          =  -1;                      // -n <..> Number of events to be analysed, -1 for all
+   fInterval         =  1000;                    // Frequency at which to display progress
+   fOutputFile       =  "evtshp_ep0304.root";    // -o <...>
+   fChains           =  "DjNorad_Eplus0304_1";              // -c <...> chain to be analyzed
+
+   // use systematics
+   fUsingSystematics = 0;
+
+   // Run selection and lumi calculation
+   fGoodRunFile      = "../LumiFiles/nc_goodruns_06.root";  // Good run file
+   fRunSelection     = "444094,466997"; // e-06 running
+
+   // other parameters
+   fKineRecMethod    =  H1Constants::eKineRecESigma;  // basic reconstruction method
+}
+
+
+// -------------------------------------------------- //
+//  Settings for the different chains
+// -------------------------------------------------- //
+
+H1AnalysisChainSteer("DjNorad") {
+   fApplyRunSelection = false;
+   fChainType        = H1AnalysisChainSteer::eModel;
+}
+
+
+
+
+// -------------------------------------------------- //
+//  Settings for H1SteerTree
+//     fLoadHat, fLoadMod, fLoadODS, fLoadUserTree
+//     are hard-coded in analysis-code.
+// -------------------------------------------------- //
+
+//*************************************************//
+//                     DJANGOH                     //
+//*************************************************//
+
+
+//*************************************************//
+//             DJANGOH NORAD eminus                //
+//*************************************************//
+
+H1SteerTree("DjNorad_Eminus0405_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000000-0000009";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000010-0000019";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000020-0000029";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000030-0000039";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000040-0000049";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000050-0000059";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.A.C0000060-0000064";
+   fLumi = 3209.89;
+}
+H1SteerTree("DjNorad_Eminus0405_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000000-0000009";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000010-0000019";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000020-0000029";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000030-0000039";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000040-0000049";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000050-0000059";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus0405_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.B.C0000060-0000064";
+   fLumi = 3210.22;
+}
+H1SteerTree("DjNorad_Eminus06_1"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000000-0000009";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_2"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000010-0000019";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_3"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000020-0000029";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_4"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000030-0000039";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_5"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000040-0000049";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_6"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000050-0000059";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_7"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.C.C0000060-0000064";
+   fLumi = 3210.38;
+}
+H1SteerTree("DjNorad_Eminus06_8"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000000-0000009";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_9"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000010-0000019";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_10"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000020-0000029";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_11"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000030-0000039";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_12"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000040-0000049";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_13"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000050-0000059";
+   fLumi = 3211.10;
+}
+H1SteerTree("DjNorad_Eminus06_14"){
+   fPath = "/nfs/dust/h1/group/britzger/norad_prod21/dst2all_djangoh";
+   fFileNames = "DJANGOH14.NC.EMINUSP.NORAD.Q2GT100.CTEQ6L.D.C0000060-0000064";
+   fLumi = 3211.10;
+}
+
+
+
+
+
+// H1AnalysisSelectionResultsSteer("NCDIS") {
+//   fGenReader = "GenInfo";
+//   fRecReader = "RecInfo";
+// }
+// H1CalcReaderSteer("GenInfo") {
+//   fInfo = "Kine_Q2Gen";
+// }
+// H1CalcReaderSteer("RecInfo") {
+//   fInfo = "Kine_Q2";
+// }
+
+
