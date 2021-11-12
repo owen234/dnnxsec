@@ -3,6 +3,9 @@
 To set things up, try this:
 
 ```
+cd <your scratch area>
+desygroupset h1
+h1lcg
 git clone https://github.com/owen234/dnnxsec.git
 cd Analysis/
 make all |& tee build-try1a.log
