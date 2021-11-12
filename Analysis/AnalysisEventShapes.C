@@ -272,15 +272,15 @@ void AnalysisEventShapes::DoCrossSectionObservablesGen() {
    }
 
    if ( beam_p_pi < 0 ) {
-      printf("\n\n *** No beam proton in gen particle list!\n\n") ;
+      ////printf("\n\n *** No beam proton in gen particle list!\n\n") ;
       return ;
    }
    if ( beam_e_pi < 0 ) {
-      printf("\n\n *** No beam electron in gen particle list!\n\n") ;
+      ////printf("\n\n *** No beam electron in gen particle list!\n\n") ;
       return ;
    }
    if ( se_pi < 0 ) {
-      printf("\n\n *** No scattered electron in gen particle list!\n\n") ;
+      ////printf("\n\n *** No scattered electron in gen particle list!\n\n") ;
       return ;
    }
 
